@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ToDoList">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	<script src="js/angular-local-storage.min.js"></script>
+	<script src="js/controller.js"></script>
+	
+	<!--Hojas de estilo-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+	<link rel="stylesheet" href="estilos/style.css">
+	<!-- iconos -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<title>Minimal Todo List</title>
+</head>
+<body ng-controller="ControllerToDoList" class="blue-grey darken-4">
+	<!-- <nav>
+	    <div class="nav-wrapper blue-grey darken-1">
+	      <a href="#" class="brand-logo deep-orange-text text-lighten-2 center">Minimal Todo</a>
+	    </div>
+	</nav> -->
+	<div class="contanier">	
+		<br>
+		<br>
+		<div class="row">
+			<div class="col l8 m6 s12">
+				<div class="card blue-grey darken-1">
+		            <div class="card-content white-text">
+		              <span class="card-title deep-orange-text text-lighten-2">Tareas</span>
+		              	<div class="row">
+		              		<div class="col l4 m4 s12" ng-repeat="tarea in toDo">
+		              			<div class="card blue-grey darken-1">
+						            <div class="card-content white-text">
+						              <span class="card-title">{{tarea.title}}</strong></span>
+						              <p>{{tarea.actividad}}</p>
+						            </div>
+						            <div class="card-action">
+						              <strong><i ng-model="date">hecha el{{date|date:'short'}}</i></strong>
+						            </div>
+					          	</div>
+		              		</div>
+		              	</div>
+		            </div>
+		            <div class="card-action">
+		              <button ng-click="clear()" class="btn waves-effect waves-light deep-orange lighten-2">Borrar todas <i class="material-icons right">thumb_down</i></button>
+		            </div>
+	            </div>
+					
+			</div>
+			<div class="col l4 m6 s12">
+				<div class="card blue-grey darken-1">
+		            <div class="card-content white-text">
+			            <span class="card-title deep-orange-text text-lighten-2">Agregar Tareas</span>
+			            <p>¿Tienes algo pendiente?, agrégalo para que lo puedas recordar</p><br>
+			            <form ng-submit="addTarea()">
+			            	<div class="input-field col s12">
+								<input type="text" id="title" ng-model="nuevaTarea.title">
+								<label for="title" class="deep-orange-text text-lighten-2">Título</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="actividad" ng-model="nuevaTarea.actividad" class="materialize-textarea"></textarea>
+								<label for="actividad" class="deep-orange-text text-lighten-2">Descripción</label>
+							</div>	
+		            </div>
+		            <div class="card-action">
+		            	<button class="btn waves-effect waves-light deep-orange lighten-2" type="submit" name="action">Agregar
+						    <i class="material-icons right">send</i>
+						</button>
+		            </div>
+						</form>
+	          </div>	
+			</div>
+  		</div>
+  		<footer class="page-footer blue-grey darken-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Made with <i class="fa fa-heart"></i> by <a class="blog white-text" href="http://carmoreno.github.io" target="_blank">CarMoreno</a></h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Powered by AngularJS</h5>
+                <p class="white-text">Hosting in <i class="fa fa-github fa-lg deep-orange-text text-lighten-2"></i></p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container deep-orange-text text-lighten-2">
+            © 2015 Copyright Todos los derechos reservados
+            </div>
+          </div>
+        </footer>
+	</div>
+</body>
+</html>
