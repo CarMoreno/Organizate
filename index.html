@@ -33,7 +33,7 @@
 		              <span class="card-title deep-orange-text text-lighten-2">Tareas</span>
 		              	<div class="row">
 		              		<div class="col l4 m4 s12" ng-repeat="tarea in toDo">
-		              			<div class="card blue-grey darken-1">
+		              			<div class="animacion card blue-grey darken-1">
 						            <div class="card-content white-text">
 						              <span class="card-title">{{tarea.title}}</strong></span>
 						              <p>{{tarea.actividad}}</p>
@@ -56,13 +56,15 @@
 		            <div class="card-content white-text">
 			            <span class="card-title deep-orange-text text-lighten-2">Agregar Tareas</span>
 			            <p>¿Tienes algo pendiente?, agrégalo para que lo puedas recordar</p><br>
-			            <form ng-submit="addTarea()">
+			            <form ng-submit="addTarea()" name="formTarea">
 			            	<div class="input-field col s12">
-								<input type="text" id="title" ng-model="nuevaTarea.title">
+								<input type="text" name ="tarea"id="title" ng-model="nuevaTarea.title" ng-pattern="/^[a-zA-Z\s]*$/" required >
 								<label for="title" class="deep-orange-text text-lighten-2">Título</label>
+								<span ng-show="formTarea.tarea.$error.pattern" >No se aceptan campos numéricos</span>
 							</div>
 							<div class="input-field col s12">
-								<textarea id="actividad" ng-model="nuevaTarea.actividad" class="materialize-textarea"></textarea>
+								<textarea id="actividad"name="descripcion" ng-model="nuevaTarea.actividad" class="materialize-textarea" ng-pattern="/^[a-zA-Z0-9\s]*$/" required></textarea>
+								<span ng-show="formTarea.descripcion.$error.pattern" >Sólo caracteres alfanuméricos</span>
 								<label for="actividad" class="deep-orange-text text-lighten-2">Descripción</label>
 							</div>	
 		            </div>

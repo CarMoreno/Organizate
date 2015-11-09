@@ -24,13 +24,19 @@ angular.module("ToDoList", ["LocalStorageModule"])//usamos un modulo de un terce
 		$scope.$watchCollection('toDo', function() {
 			localStorageService.set("my-todolist", $scope.toDo)
 		})
+		//Agrega una nueva tarea al array de tareas
 		$scope.addTarea = function() {
 			$scope.toDo.push($scope.nuevaTarea)
 			console.log($scope.toDo)
 			$scope.nuevaTarea = {}
 			
 		}
+		//Borra todas las tareas
 		$scope.clear = function(){
 			$scope.toDo = []
+		}
+		//Borra una tarea en particular
+		$scope.clearTarea = function() {
+			$scope.toDo.pop();
 		}
 	})

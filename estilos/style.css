@@ -10,3 +10,18 @@ main{
 a.blog.white-text{
 	color:#ff8a65 !important;
 }
+
+.animacion.ng-hide{
+	opacity: 0 !important;
+	display: block;
+}
+
+.animacion :hover{
+	cursor: pointer;
+	background-color: #455a64;
+}
+/*.error{
+	display: block;
+	color: salmon;
+}
+*/
