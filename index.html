@@ -27,7 +27,7 @@
 		<br>
 		<br>
 		<div class="row">
-			<div class="col l8 m6 s12">
+			<div class="col l8 m12 s12">
 				<div class="card blue-grey darken-1">
 		            <div class="card-content white-text">
 		              <span class="card-title deep-orange-text text-lighten-2">Tareas</span>
@@ -51,14 +51,14 @@
 	            </div>
 					
 			</div>
-			<div class="col l4 m6 s12">
+			<div class="col l4 m12 s12">
 				<div class="card blue-grey darken-1">
 		            <div class="card-content white-text">
 			            <span class="card-title deep-orange-text text-lighten-2">Agregar Tareas</span>
 			            <p>¿Tienes algo pendiente?, agrégalo para que lo puedas recordar</p><br>
 			            <form ng-submit="addTarea()" name="formTarea">
 			            	<div class="input-field col s12">
-								<input type="text" name ="tarea"id="title" ng-model="nuevaTarea.title" ng-pattern="/^[a-zA-Z\s]*$/" required >
+								<input type="text" name ="tarea"id="title" ng-model="nuevaTarea.title" ng-pattern="/^[a-zA-Z0-9\s]*$/" required >
 								<label for="title" class="deep-orange-text text-lighten-2">Título</label>
 								<span ng-show="formTarea.tarea.$error.pattern" >No se aceptan campos numéricos</span>
 							</div>
